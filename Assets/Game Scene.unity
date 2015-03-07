@@ -696,6 +696,8 @@ MonoBehaviour:
   enemyInstance: {fileID: 1373958796}
   canvasInstance: {fileID: 2092152428}
   dmg: {fileID: 22469286, guid: 36daabdd05541fd48888d57698da7ca1, type: 2}
+  copper: {fileID: 464954, guid: 6f3935bdd236f7d4eb93d55df6f0f77f, type: 2}
+  gameState: playing
 --- !u!1 &377331815
 GameObject:
   m_ObjectHideFlags: 0
@@ -2589,7 +2591,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1373958796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 501.56601, y: 283.812012, z: -915}
+  m_LocalPosition: {x: 501.506012, y: 283.817993, z: -915}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2609,7 +2611,7 @@ MonoBehaviour:
   HP: 90
   HP_MAX: 100
   HP_UI: {fileID: 1901448389}
-  EXP: 120
+  EXP: 90
   GOLD: 35
   STANCE: 0
   attack: 4

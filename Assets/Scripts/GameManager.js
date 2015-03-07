@@ -7,11 +7,12 @@ public var enemyInstance : GameObject;
 public var canvasInstance : Transform;
 
 public var dmg : Transform;
+public var copper : Transform;
 
 private var playerInstanceData : Player;
 private var enemyInstanceData : Enemy;
 
-private var gameState : String = "playing";
+public var gameState : String = "playing";
 
 function Start ()
 {
@@ -75,8 +76,18 @@ function playGameLoop()
 	else if (enemyInstanceData.HP < 0)
 	{
 		playerInstanceData.EXP += enemyInstanceData.EXP;
-		playerInstanceData.GOLD += enemyInstanceData.GOLD;
+		spawnGold(enemyInstanceData.GOLD);
 		doNext();
+	}
+}
+
+function spawnGold(nbrGold : int)
+{
+	for (var i = 0; i < nbrGold % 10; i++)
+	{
+		var tmpCopper : Transform = Instantiate(copper);
+		tmpCopper.position.x = enemyInstance.transform.position.x + Random.Range(-0.1f, 0.04f);
+		tmpCopper.position.y = enemyInstance.transform.position.y + Random.Range(-0.05f, 0.04f);
 	}
 }
 
@@ -104,8 +115,7 @@ function doNext()
 		playerInstanceData.EXP_MAX += playerInstanceData.EXP_MAX + 250;
 		doLevelUp();
 	}
-	else
-		setNewEnemy();
+	setNewEnemy();
 }
 
 function playerAttack()
